@@ -2,16 +2,6 @@
 # CASA PARALLELISATION
 ####################################################################################################
 
-# import modules
-################
-
-from subprocess import call, Popen, PIPE, STDOUT
-from collections import Counter
-import time
-
-
-####################################################################################################
-
 def casa_execute_parallel(processes, max_threads=10, debug=False):
 
     """
@@ -19,6 +9,10 @@ def casa_execute_parallel(processes, max_threads=10, debug=False):
     The chunksize (default: 100 channels) is passed to the splitting function).
     Requires a list of dataset/process status dictionaries.
     """
+
+    from subprocess import call, Popen, PIPE, STDOUT
+    from collections import Counter
+    import time
 
     # log start of task
     def post_task_start(process):
